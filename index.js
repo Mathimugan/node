@@ -7,6 +7,7 @@ const { v4: uuidv4 } = require('uuid');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const AWS = require('aws-sdk');
 require('aws-sdk/lib/maintenance_mode_message').suppress = true;
+console.log(process.env.AWS_ACCESS_KEY_ID);
 AWS.config.update({ region: 'ap-southeast-1',accessKeyId: process.env.AWS_ACCESS_KEY_ID,
 secretAccessKey:process.env.AWS_SECRET_ACCESS_KEY});
 const client = new AWS.DynamoDB.DocumentClient();
