@@ -7,8 +7,8 @@ const { v4: uuidv4 } = require('uuid');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const AWS = require('aws-sdk');
 require('aws-sdk/lib/maintenance_mode_message').suppress = true;
-AWS.config.update({ region: 'ap-southeast-1',accessKeyId: "AKIAVXCHOFVI2OSH7Z4C",
-secretAccessKey:"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"});
+AWS.config.update({ region: 'ap-southeast-1',accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+secretAccessKey:process.env.AWS_SECRET_ACCESS_KEY});
 const client = new AWS.DynamoDB.DocumentClient();
 const tableName = 'employee';
 var params = {
@@ -20,7 +20,6 @@ res.send("Hello World");
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
-    console.log(uuidv4());
     var params = {
         TableName: tableName,
         Item: {
@@ -28,7 +27,10 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
             "Id": uuidv4(),
             // name property passed from body
             "FirstName": body["firstname"],
-            "LastName": body["lastname"]
+            "LastName": body["lastname"],
+            "Email": body["email"],
+            "Address": body["address"],
+            "submission": body["submission"],
 
         }
     };
