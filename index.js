@@ -39,9 +39,9 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
     client.put(params, (err, data) => {
         if (err) {
             console.error("Unable to add item.");
-            console.error("Error JSON:", JSON.stringify(err, null, 2));
+            console.error("Error JSON:", JSON.stringify(err, null, 1));
         } else {
-            console.log("Added item:", JSON.stringify(data, null, 2));
+            console.log("Added item:", JSON.stringify(data, null, 1));
         }
     });
   });
