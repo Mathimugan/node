@@ -34,7 +34,7 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
 
         }
     };
-
+    console.log(params);
 
     client.put(params, (err, data) => {
         if (err) {
