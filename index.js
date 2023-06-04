@@ -26,9 +26,10 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
             // creates a new uuid
             "Id": uuidv4(),
             // name property passed from body
-            "FullName": body["fullname"],
+            "FirstName": body["firstname"],
+            "LastName": body["lastname"],
             "Email": body["email"],
-            "Address": body["company"],
+            "Address": body["address"],
             "submission": body["submission"],
 
         }
