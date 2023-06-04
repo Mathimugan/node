@@ -26,24 +26,23 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
             // creates a new uuid
             "Id": uuidv4(),
             // name property passed from body
-            "FirstName": body["firstname"],
-            "LastName": body["lastname"],
+            "FullName": body["fullname"],
             "Email": body["email"],
-            "Address": body["address"],
+            "Address": body["company"],
             "submission": body["submission"],
 
         }
     };
     console.log(params);
 
-    client.put(params, (err, data) => {
+    /*client.put(params, (err, data) => {
         if (err) {
             console.error("Unable to add item.");
             console.error("Error JSON:", JSON.stringify(err, null, 1));
         } else {
             console.log("Added item:", JSON.stringify(data, null, 1));
         }
-    });
+    });*/
   });
 
   
