@@ -20,6 +20,7 @@ res.send("Hello World");
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
+    console.log(body);
     var params = {
         TableName: tableName,
         Item: {
