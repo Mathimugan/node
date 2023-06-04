@@ -17,6 +17,7 @@ var params = {
 app.get('/',(req,res)=>
 {
 res.send("Hello World");
+console.log("test");
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
