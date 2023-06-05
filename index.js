@@ -17,9 +17,11 @@ var params = {
 app.get('/',(req,res)=>
 {
 res.send("Hello World");
+console.log("test");
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
+    console.log(body);
     var params = {
         TableName: tableName,
         Item: {
@@ -34,16 +36,16 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
 
         }
     };
-    console.log(params);
+    //console.log(params);
 
-    client.put(params, (err, data) => {
+    /*client.put(params, (err, data) => {
         if (err) {
             console.error("Unable to add item.");
             console.error("Error JSON:", JSON.stringify(err, null, 1));
         } else {
             console.log("Added item:", JSON.stringify(data, null, 1));
         }
-    });
+    });*/
   });
 
   
