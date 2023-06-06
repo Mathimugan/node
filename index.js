@@ -24,12 +24,14 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
     var payload=body;
     console.log(payload);
     for( var key in payload ) {
-        var value = payload[key];
-        var value1 = payload[key].firstname;
-        console.log(value);
-        console.log(value1);
+        var value = payload[key]['firstname'];
+        var lastname = payload[key]['lastname'];
+        var age = payload[key]['age'];
+        var nationality = payload[key]['nationality'];
+        var dob = payload[key]['dob'];
+        console.log(lastname);
       }
-      console.log("mathi");
+      console.log("mathi1");
    /*payload.forEach(element => {
     console.log(element["firstname"]);
     var params = {
