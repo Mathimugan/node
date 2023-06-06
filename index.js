@@ -22,9 +22,10 @@ console.log("test");
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
     var payload=body;
-    console.log(payload);
+   
    payload.forEach(element => {
-    var params = {
+    console.log(element["firstname"]);
+    /*var params = {
         TableName: tableName,
         Item: {
             // creates a new uuid
@@ -37,10 +38,10 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
             "dob": element["dob"],
 
         }
-    };
+    };*/
    });
     
-    console.log(params);
+   // console.log(params);
 
     /*client.put(params, (err, data) => {
         if (err) {
