@@ -22,6 +22,7 @@ console.log("test");
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
     var payload=body;
+    console.log(payload);
    payload.forEach(element => {
     var params = {
         TableName: tableName,
