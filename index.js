@@ -22,12 +22,14 @@ console.log("test");
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
     var payload=body;
-   
-    for (const [key, value] of Object.entries(payload)) {
-       
-        var firstname = value['firstname'];
-        console.log(firstname);
+    console.log(payload);
+    for( var key in payload ) {
+        var value = payload[key];
+        var value1 = payload[key].firstname;
+        console.log(value);
+        console.log(value1);
       }
+      console.log("mathi");
    /*payload.forEach(element => {
     console.log(element["firstname"]);
     var params = {
