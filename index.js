@@ -24,7 +24,9 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
     var payload=body;
    
     for (const [key, value] of Object.entries(payload)) {
-        console.log(key, value);
+       
+        var firstname = value['firstname'];
+        console.log(firstname);
       }
    /*payload.forEach(element => {
     console.log(element["firstname"]);
