@@ -21,26 +21,22 @@ console.log("test");
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
-    console.log(body);
-   /*payload.forEach(element => {
-    console.log(element["firstname"]);
     var params = {
         TableName: tableName,
         Item: {
             // creates a new uuid
             "Id": uuidv4(),
             // name property passed from body
-            "FirstName": element["firstname"],
-            "lastname": element["lastname"],
-            "age": element["age"],
-            "nationality": element["nationality"],
-            "dob": element["dob"],
-
+            "name:": body["name"],
+            "email": body["email"],
+            "age": body["age"],
+            "submission_time": body["submission_time"],
+            "response_id": body["response_id"]
         }
     };
-   });*/
+  
     
-   // console.log(params);
+   console.log(params);
 
     /*client.put(params, (err, data) => {
         if (err) {
