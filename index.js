@@ -45,6 +45,7 @@ app.post('/api/addemployee', jsonParser, function (req, res) {
             console.log("Added item:", JSON.stringify(data, null, 1));
         }
     });
+    res.status(200).send("Data Inserted Successfully");
   });
 
   
