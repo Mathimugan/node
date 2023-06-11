@@ -23,7 +23,7 @@ app.get('/',(req,res)=>
     .then(res => {
       
       
-        console.log(res.data.chart.result);
+        console.log(res.data.chart.result.meta.currency);
     }).catch(err => console.error(err))
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
