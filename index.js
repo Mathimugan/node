@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+const cors = require('cors');
+app.use(cors());
 require("dotenv").config();
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
