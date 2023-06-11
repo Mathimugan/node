@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 const cors = require('cors');
+const axios = require('axios');
 app.use(cors());
 require("dotenv").config();
 var bodyParser = require('body-parser');
@@ -18,8 +19,12 @@ var params = {
 };
 app.get('/',(req,res)=>
 {
-res.send("Hello World");
-console.log("test");
+    axios.get('https://query1.finance.yahoo.com/v8/finance/chart/Z74.SI?region=SG&lang=en-SG&includePrePost=false&interval=2m&useYfid=true&range=1d&corsDomain=sg.finance.yahoo.com&.tsrc=finance')
+    .then(res => {
+      
+      
+        window.alert(res.data)
+    }).catch(err => console.error(err))
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
