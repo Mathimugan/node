@@ -19,12 +19,13 @@ var params = {
 };
 app.get('/',(req,res)=>
 {
-    axios.get('https://query1.finance.yahoo.com/v8/finance/chart/Z74.SI?region=SG&lang=en-SG&includePrePost=false&interval=2m&useYfid=true&range=1d&corsDomain=sg.finance.yahoo.com&.tsrc=finance')
-    .then(res => {
-      
-      
-        console.log(res.data.chart.result.meta.currency);
-    }).catch(err => console.error(err))
+    const result= axios.get('https://query1.finance.yahoo.com/v8/finance/chart/Z74.SI?region=SG&lang=en-SG&includePrePost=false&interval=2m&useYfid=true&range=1d&corsDomain=sg.finance.yahoo.com&.tsrc=finance')
+    .then(res => {res.data.chart.result
+    }).catch(err => console.error(err));
+    result.map((res)=>
+    {
+    console.log(res);
+    });
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
