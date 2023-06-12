@@ -30,6 +30,7 @@ axios.get('https://query1.finance.yahoo.com/v8/finance/chart/F13.SI?region=SG&la
     const symbol = result.data.chart.result[0].meta.symbol;
     const regularMarketPrice = result.data.chart.result[0].meta.regularMarketPrice;
     const previousClose = result.data.chart.result[0].meta.previousClose;
+    const test='';
     const response ={
         currency:currency,
         symbol:symbol,
