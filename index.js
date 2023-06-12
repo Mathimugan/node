@@ -23,10 +23,21 @@ res.send('Welcome');
 });
 app.get('/stock',(req,res)=>
 {
-    const result= axios.get('https://query1.finance.yahoo.com/v8/finance/chart/Z74.SI?region=SG&lang=en-SG&includePrePost=false&interval=2m&useYfid=true&range=1d&corsDomain=sg.finance.yahoo.com&.tsrc=finance')
-    .then(res => {res.data.chart
-    }).catch(err => console.error(err));
-   console.log(result);
+axios.get('https://query1.finance.yahoo.com/v8/finance/chart/C6L.SI?region=SG&lang=en-SG&includePrePost=false&interval=2m&useYfid=true&range=1d&corsDomain=sg.finance.yahoo.com&.tsrc=finance',(req,res)=>
+   {}).then(result=>
+    {
+    const currency = result.data.chart.result[0].meta.currency;
+    const symbol = result.data.chart.result[0].meta.symbol;
+    const regularMarketPrice = result.data.chart.result[0].meta.regularMarketPrice;
+    const previousClose = result.data.chart.result[0].meta.previousClose;
+    const response ={
+        currency:currency,
+        symbol:symbol,
+        regularMarketPrice:regularMarketPrice,
+        previousClose:previousClose
+    }
+    res.send(response)}).catch(err=>console.log(err));
+
 });
 app.post('/api/addemployee', jsonParser, function (req, res) {
     var body = req.body;
