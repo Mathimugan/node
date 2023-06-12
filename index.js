@@ -19,6 +19,10 @@ var params = {
 };
 app.get('/',(req,res)=>
 {
+res.send('Welcome');
+});
+app.get('/stock',(req,res)=>
+{
     const result= axios.get('https://query1.finance.yahoo.com/v8/finance/chart/Z74.SI?region=SG&lang=en-SG&includePrePost=false&interval=2m&useYfid=true&range=1d&corsDomain=sg.finance.yahoo.com&.tsrc=finance')
     .then(res => {res.data.chart
     }).catch(err => console.error(err));
