@@ -23,7 +23,7 @@ res.send('Welcome');
 });
 app.get('/stock',(req,res)=>
 {
-axios.get('https://query1.finance.yahoo.com/v8/finance/chart/C6L.SI?region=SG&lang=en-SG&includePrePost=false&interval=2m&useYfid=true&range=1d&corsDomain=sg.finance.yahoo.com&.tsrc=finance',(req,res)=>
+axios.get('https://query1.finance.yahoo.com/v8/finance/chart/F13.SI?region=SG&lang=en-SG&includePrePost=false&interval=2m&useYfid=true&range=1d&corsDomain=sg.finance.yahoo.com&.tsrc=finance',(req,res)=>
    {}).then(result=>
     {
     const currency = result.data.chart.result[0].meta.currency;
